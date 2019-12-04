@@ -12,6 +12,9 @@ namespace _003CURD
         {
             using (MyDbContext cxt = new MyDbContext())
             {
+
+                cxt.Database.Log = (sql) => Console.WriteLine(sql); //可以显示EF把查询语句翻译成的SQL语句
+
                 #region 添加数据
                 //Person p1 = new Person() { Name = "003shanzm3", CreateDateTime = DateTime.Now, Age = 35 };
                 //cxt.Persons.Add(p1);//等价于：cxt.Set<Person>().Add(p1);
@@ -21,19 +24,19 @@ namespace _003CURD
 
 
                 #region 查数据
-                //IQueryable<Person> queryResult = cxt.Persons.Where(n => n.Age > 25).OrderByDescending(n => n.Age);
-                ////注意返回值的类型是IQueryable<Person>,你也可以写他的父类IEnumberable<Person>,或是直接写var类型推断
-                //foreach (var p in queryResult)
-                //{
-                //    Console.WriteLine($"Id是{p.Id },名字是{p.Name },年龄是{p.Age }");
-                //}
+                IQueryable<Person> queryResult = cxt.Persons.Where(n => n.Age > 25).OrderByDescending(n => n.Age);
+                //注意返回值的类型是IQueryable<Person>,你也可以写他的父类IEnumberable<Person>,或是直接写var类型推断
+                foreach (var p in queryResult)
+                {
+                    Console.WriteLine($"Id是{p.Id },名字是{p.Name },年龄是{p.Age }");
+                }
 
                 //在EF中注意使用Skip（）函数前一定要先使用Orderby（）函数排序
-                var query = cxt.Persons.OrderBy(n => n.Id).Skip(2).Take(2);//按照Id排序，跳过2行数据取2行
-                foreach (var p in query)
-                {
-                    Console.WriteLine(p.Id + " " + p.Name);
-                }
+                //var query = cxt.Persons.OrderBy(n => n.Id).Skip(2).Take(2);//按照Id排序，跳过2行数据取2行
+                //foreach (var p in query)
+                //{
+                //    Console.WriteLine(p.Id + " " + p.Name);
+                //}
                 #endregion
 
 
