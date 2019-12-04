@@ -8,3 +8,6 @@ c:\Users\shanzm\documents\visual studio 2015\Projects\EFDemo\002FluentAPI\bin\De
 c:\Users\shanzm\documents\visual studio 2015\Projects\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.csprojResolveAssemblyReference.cache
 c:\Users\shanzm\documents\visual studio 2015\Projects\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.exe
 c:\Users\shanzm\documents\visual studio 2015\Projects\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.pdb
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\002FluentAPI.exe.config
+F:\ForGit\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.exe
+F:\ForGit\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.pdb

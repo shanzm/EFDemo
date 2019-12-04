@@ -11,3 +11,6 @@ c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\En
 C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\bin\Debug\EFDemo.exe.config
 C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\obj\Debug\EFDemo.exe
 C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\obj\Debug\EFDemo.pdb
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EFDemo.exe.config
+F:\ForGit\EFDemo\001EFDemo\obj\Debug\EFDemo.exe
+F:\ForGit\EFDemo\001EFDemo\obj\Debug\EFDemo.pdb
