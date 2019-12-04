@@ -1,0 +1,11 @@
+c:\Users\shanzm\documents\visual studio 2015\Projects\EFDemo\003CURD\bin\Debug\003CURD.exe.config
+F:\ForGit\EFDemo\003CURD\bin\Debug\003CURD.exe.config
+F:\ForGit\EFDemo\003CURD\obj\Debug\003CURD.csprojResolveAssemblyReference.cache
+F:\ForGit\EFDemo\003CURD\bin\Debug\003CURD.exe
+F:\ForGit\EFDemo\003CURD\bin\Debug\003CURD.pdb
+F:\ForGit\EFDemo\003CURD\bin\Debug\EntityFramework.dll
+F:\ForGit\EFDemo\003CURD\bin\Debug\EntityFramework.SqlServer.dll
+F:\ForGit\EFDemo\003CURD\bin\Debug\EntityFramework.xml
+F:\ForGit\EFDemo\003CURD\bin\Debug\EntityFramework.SqlServer.xml
+F:\ForGit\EFDemo\003CURD\obj\Debug\003CURD.exe
+F:\ForGit\EFDemo\003CURD\obj\Debug\003CURD.pdb
