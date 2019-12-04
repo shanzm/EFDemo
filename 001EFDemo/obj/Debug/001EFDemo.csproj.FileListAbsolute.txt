@@ -1,0 +1,13 @@
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\obj\Debug\001EFDemo.csprojResolveAssemblyReference.cache
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\obj\Debug\EFDemo.exe
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\obj\Debug\EFDemo.pdb
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EFDemo.exe.config
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EFDemo.exe
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EFDemo.pdb
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EntityFramework.dll
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EntityFramework.xml
+c:\users\shanzm\documents\visual studio 2015\Projects\EFDemo\EFDemo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\bin\Debug\EFDemo.exe.config
+C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\obj\Debug\EFDemo.exe
+C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\obj\Debug\EFDemo.pdb
