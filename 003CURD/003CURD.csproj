@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgeCount.cs" />
     <Compile Include="ModelConfig\PersonConfig.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Person.cs" />

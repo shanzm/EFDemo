@@ -12,8 +12,8 @@ namespace _003CURD
         {
             using (MyDbContext cxt = new MyDbContext())
             {
-
-                cxt.Database.Log = (sql) => Console.WriteLine(sql); //可以显示EF把查询语句翻译成的SQL语句
+                //可以打印EF把查询语句翻译成的SQL语句，方便我们学习探究
+                cxt.Database.Log = (sql) => Console.WriteLine(sql);
 
                 #region 添加数据
                 //Person p1 = new Person() { Name = "003shanzm3", CreateDateTime = DateTime.Now, Age = 35 };
@@ -24,12 +24,12 @@ namespace _003CURD
 
 
                 #region 查数据
-                IQueryable<Person> queryResult = cxt.Persons.Where(n => n.Age > 25).OrderByDescending(n => n.Age);
-                //注意返回值的类型是IQueryable<Person>,你也可以写他的父类IEnumberable<Person>,或是直接写var类型推断
-                foreach (var p in queryResult)
-                {
-                    Console.WriteLine($"Id是{p.Id },名字是{p.Name },年龄是{p.Age }");
-                }
+                //IQueryable<Person> queryResult = cxt.Persons.Where(n => n.Age > 25).OrderByDescending(n => n.Age);
+                ////注意返回值的类型是IQueryable<Person>,你也可以写他的父类IEnumberable<Person>,或是直接写var类型推断
+                //foreach (var p in queryResult)
+                //{
+                //    Console.WriteLine($"Id是{p.Id },名字是{p.Name },年龄是{p.Age }");
+                //}
 
                 //在EF中注意使用Skip（）函数前一定要先使用Orderby（）函数排序
                 //var query = cxt.Persons.OrderBy(n => n.Id).Skip(2).Take(2);//按照Id排序，跳过2行数据取2行
@@ -78,6 +78,34 @@ namespace _003CURD
                 //}
                 //Console.WriteLine(cxt.SaveChanges());
                 #endregion
+
+                #region 在EF中使用原始的SQL语句
+                //对于一些批量的修改可以使用SQL语句，性能高
+                //在SQL中为了防止SQL注入，我的SQL语句都是参数化的，而不是拼接字符串
+                //string sql = "insert into T_Persons(Name,CreateDateTime,Age) values(@Name,@CreateDateTime,@Age)";
+                //string name="shanzm";DateTime createDateTime=DateTime.Now;int age=25;
+                //SqlParameter[] param ={
+                //                       new SqlParameter ("@Name",name ),
+                //                       new SqlParameter ("@CreateDateTime",createDateTime ),
+                //                       new  SqlParameter ("@Age",age )
+                //                  };
+                //但是在EF中使用SQL就没必要参数化，因为啊，EF会重新翻译的SQL语句，它会翻译成参数化的SQL语句,所以可以这么写：
+                //string sql = $"insert into T_Persons(Name,CreateDateTime,Age) values({name},{createDateTime},{age})";
+
+                //在EF中直接使用SQL语句--插入&删除&修改
+                cxt.Database.ExecuteSqlCommand("insert into T_Persons(Name ,CreateDateTime,Age) values('shanzmsql',GetDate(),22)");
+                //在EF中直接使用SQL语句--查询
+                //首先根据你的查询，新建一个类，类的每一个属性就是你查询结果的列名,然后把查询的结果映射到这个类
+                //所以记得你要明确你想要的查询结果是什么，从而根据结果建类
+                //我们查询每个年龄的人数，所以新建议AgeCount.cs类，添加两个属性：Age和ageCount
+
+                var result = cxt.Database.SqlQuery<AgeCount>("select Age ,count(*) as ageCount from T_Persons group by Age");
+                foreach (AgeCount a in result)
+                {
+                    Console.WriteLine($"年龄是{a.Age }的人数是{a.ageCount }");
+                }
+                #endregion
+
                 Console.ReadKey();
             }
         }
