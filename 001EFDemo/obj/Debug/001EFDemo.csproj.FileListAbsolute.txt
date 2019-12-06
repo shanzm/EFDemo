@@ -14,3 +14,10 @@ C:\Users\shanzm\Documents\Visual Studio 2015\Projects\EFDemo\001EFDemo\obj\Debug
 F:\ForGit\EFDemo\001EFDemo\bin\Debug\EFDemo.exe.config
 F:\ForGit\EFDemo\001EFDemo\obj\Debug\EFDemo.exe
 F:\ForGit\EFDemo\001EFDemo\obj\Debug\EFDemo.pdb
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EFDemo.exe
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EFDemo.pdb
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EntityFramework.dll
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EntityFramework.SqlServer.dll
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EntityFramework.xml
+F:\ForGit\EFDemo\001EFDemo\bin\Debug\EntityFramework.SqlServer.xml
+F:\ForGit\EFDemo\001EFDemo\obj\Debug\001EFDemo.csprojResolveAssemblyReference.cache

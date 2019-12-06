@@ -11,3 +11,10 @@ c:\Users\shanzm\documents\visual studio 2015\Projects\EFDemo\002FluentAPI\obj\De
 F:\ForGit\EFDemo\002FluentAPI\bin\Debug\002FluentAPI.exe.config
 F:\ForGit\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.exe
 F:\ForGit\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.pdb
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\002FluentAPI.exe
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\002FluentAPI.pdb
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.dll
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.SqlServer.dll
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.xml
+F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.SqlServer.xml
+F:\ForGit\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.csprojResolveAssemblyReference.cache
