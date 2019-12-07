@@ -54,7 +54,7 @@ namespace _003CURD
                 //作用：在EF中不用把数据查询出来也可以修改
 
                 //EF对象状态管理--例1--添加数据
-                Add();
+                //Add();
 
                 //EF对象状态管理--例2--修改数据--修改Id是36的用户名为"shanzmModified"
                 //Modify();
@@ -63,8 +63,13 @@ namespace _003CURD
                 //Retrieve();
 
                 //EF对象状态管理--例4--删除数据
-                //Deleted();
+                //Delete1();
 
+                //EF 对象状态管理--例5--不查询出来直接删除对象
+                //Delete2();
+
+                // EF对象状态管理--例6--EF优化的一个技巧-使用AsNoTracking()
+                Optimize();
                 Console.ReadKey();
             }
         }
@@ -224,7 +229,7 @@ namespace _003CURD
         }
 
         /// <summary>
-        /// EF对象状态管理--例2--修改数据--修改Id是36的用户名为"shanzmModified"
+        /// EF对象状态管理--例2--修改数据(未查询出来直接修改)--修改Id是36的用户名为"shanzmModified"
         /// </summary>
         public static void Modify()
         {
@@ -262,7 +267,7 @@ namespace _003CURD
         /// <summary>
         /// EF 对象状态管理--例4--删除对象
         /// </summary>
-        public static void Deleted()
+        public static void Delete1()
         {
             MyDbContext cxt = new MyDbContext();
             Person p4 = cxt.Persons.Where(p => p.Id == 29).First();
@@ -275,6 +280,59 @@ namespace _003CURD
             Console.WriteLine(cxt.Entry(p4).State);//Detached
         }
 
+        /// <summary>
+        /// EF 对象状态管理--例5--不查询出来直接删除对象
+        /// </summary>
+        public static void Delete2()
+        {
+            MyDbContext cxt = new _003CURD.MyDbContext();
+
+            //法1.新建对象为Detached,改为Unchanged,再改为Deleted，保存后即删除指定的对象
+            Person p1 = new Person() { Id = 41 };
+            cxt.Entry(p1).State = System.Data.Entity.EntityState.Unchanged;
+            cxt.Persons.Remove(p1);//等价：cxt.Entry(p1).State = System.Data.Entity.EntityState.Deleted;
+            cxt.SaveChanges();
+
+            //法2.新建对象为Detached，直接改为Deleted，保存后即删除指定的对象
+            Person p2 = new Person() { Id = 36 };
+            cxt.Entry(p2).State = System.Data.Entity.EntityState.Deleted;
+            cxt.SaveChanges();
+
+            //注意状态的的改变都是依赖于对象的Id属性的，不可以根据对象的其他属性改变状态，
+            //即使你修改也是默认修改的是Id =0的对象（数据库中没有Id=0的数据，所以就会报错）
+            //下面就是依据对象的Name属性，删除Name为shanzm的数据，会报错，错误信息中提示没有第0行数据
+            //Person p3 = new Person { Name = "shanzm" };
+            //cxt.Entry(p3).State = System.Data.Entity.EntityState.Deleted;
+            //cxt.SaveChanges();
+        }
+
+        /// <summary>
+        /// EF对象状态管理--例6--EF优化的一个技巧-使用AsNoTracking()
+        /// </summary>
+        public static void Optimize()
+        {
+            //如果查询出来的对象 只是供显示使用，不会修改、删除后保存，那么可以使用AsNoTracking()
+            //来使得查询出来的对象是 Detached 状态，这样对对象的修改也还是 Detached状态，
+            //即EF不再跟踪这个对象状态的改变，能够提升性能。
+           
+
+            MyDbContext cxt = new MyDbContext();
+            var p1 = cxt.Persons.First();
+            Console.WriteLine(cxt.Entry(p1).State);//Unchanged状态
+            p1.Age++;
+            Console.WriteLine(cxt.Entry(p1).State);//Modified状态
+            cxt.SaveChanges();
+
+
+            //在查询DbSet<T>对象后，函查询数之前添加一个AsNoTracking()函数，则查询的结果是Detached
+            //我们对这个Detected对象的属性修改后也是Detached,但是也因此不能够保存到数据库中，即使你使用了SaveChanges()函数也不会保存
+            //因为SaveChanges()函数是根据对象的状态值进行数据操作的，只有状态值是Added、Modified、Deleted的对象才会保存到数据库中
+            var p2 = cxt.Persons.AsNoTracking().First();
+            Console.WriteLine(cxt.Entry(p2).State);//Detached状态
+            p2.Age++;
+            Console.WriteLine(cxt.Entry(p2).State);//Detached状态
+    
+        }
     }
 
 }
