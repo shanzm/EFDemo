@@ -50,6 +50,20 @@ namespace _003CURD
                 ////你可以查看SQLFunction类的定义看看，其中有许多可以使用的函数
                 #endregion
 
+                //EF对象状态管理
+                //作用：在EF中不用把数据查询出来也可以修改
+
+                //EF对象状态管理--例1--添加数据
+                Add();
+
+                //EF对象状态管理--例2--修改数据--修改Id是36的用户名为"shanzmModified"
+                //Modify();
+
+                //EF对象状态管理--例3--查询数据
+                //Retrieve();
+
+                //EF对象状态管理--例4--删除数据
+                //Deleted();
 
                 Console.ReadKey();
             }
@@ -191,6 +205,76 @@ namespace _003CURD
                 }
             }
         }
+
+        /// <summary>
+        /// EF对象状态管理-- 例1--添加数据
+        /// </summary>
+        public static void Add()
+        {
+            MyDbContext cxt = new MyDbContext();
+
+            Person p1 = new Person() { Name = "shanzm", Age = 24, CreateDateTime = DateTime.Now };
+            Console.WriteLine(cxt.Entry(p1).State);//新创建对象是没有被EF监控的，即EntityState值Detached
+
+            cxt.Entry(p1).State = System.Data.Entity.EntityState.Added;// cxt.Persons.Add(p1);
+            Console.WriteLine(cxt.Entry(p1).State);//Added
+
+            cxt.SaveChanges();//保存修改到数据库（这里就将上面状态值是Added的对象插入到了数据库），状态值变为：Unchanged
+            Console.WriteLine(cxt.Entry(p1).State);
+        }
+
+        /// <summary>
+        /// EF对象状态管理--例2--修改数据--修改Id是36的用户名为"shanzmModified"
+        /// </summary>
+        public static void Modify()
+        {
+            MyDbContext cxt = new MyDbContext();//注意虽然EF推荐对DBContext对象使用using释放，但是不用也可以
+
+            Person p1 = new Person() { Id = 36 };
+            Console.WriteLine(cxt.Entry(p1).State);//Detached
+
+            cxt.Entry(p1).State = System.Data.Entity.EntityState.Unchanged; //等价于：cxt.Persons.Attach(p1);//注意是Attach（）而不是Add()
+            Console.WriteLine(cxt.Entry(p1).State);//Unchanged  //注意理解：Unchanged状态即处于EF监控状态
+
+            p1.Name = "shanzmModified";
+            Console.WriteLine(cxt.Entry(p1).State);//Modified
+
+            cxt.SaveChanges();
+            Console.WriteLine(cxt.Entry(p1).State);//Unchanged
+        }
+
+        /// <summary>
+        /// EF对象状态管理-- 例3-查询数据
+        /// </summary>
+        public static void Retrieve()
+        {
+            MyDbContext cxt = new MyDbContext();
+
+            var query = cxt.Persons.Where(p => p.Id == 36);
+            Person p3 = query.First();//Unchanged  ，注意理解：Unchanged就是处于监控状态
+            Console.WriteLine(cxt.Entry(p3).State);
+            p3.Age = 110;//Modified 注意这里调试的时候每次进行修改Age值，否则运行一次后，不修改则对象，则状态就是Unchanged啊
+            Console.WriteLine(cxt.Entry(p3).State);
+            cxt.SaveChanges();
+            Console.WriteLine(cxt.Entry(p3).State);//Unchanged
+        }
+
+        /// <summary>
+        /// EF 对象状态管理--例4--删除对象
+        /// </summary>
+        public static void Deleted()
+        {
+            MyDbContext cxt = new MyDbContext();
+            Person p4 = cxt.Persons.Where(p => p.Id == 29).First();
+            Console.WriteLine(cxt.Entry(p4).State);//Unchanged
+
+            cxt.Entry(p4).State = System.Data.Entity.EntityState.Deleted;//等价于： cxt.Persons.Remove(p4);
+            Console.WriteLine(cxt.Entry(p4).State);//Deleted
+
+            cxt.SaveChanges();
+            Console.WriteLine(cxt.Entry(p4).State);//Detached
+        }
+
     }
 
 }
