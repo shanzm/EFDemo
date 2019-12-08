@@ -1,0 +1,10 @@
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\004FluentAPI.exe.config
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\004FluentAPI.exe
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\004FluentAPI.pdb
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\EntityFramework.dll
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\EntityFramework.SqlServer.dll
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\EntityFramework.xml
+F:\ForGit\EFDemo\004FluentAPI\bin\Debug\EntityFramework.SqlServer.xml
+F:\ForGit\EFDemo\004FluentAPI\obj\Debug\004FluentAPI2.csprojResolveAssemblyReference.cache
+F:\ForGit\EFDemo\004FluentAPI\obj\Debug\004FluentAPI.exe
+F:\ForGit\EFDemo\004FluentAPI\obj\Debug\004FluentAPI.pdb
