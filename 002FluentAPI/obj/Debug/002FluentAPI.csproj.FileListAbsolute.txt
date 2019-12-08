@@ -17,4 +17,3 @@ F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.dll
 F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.SqlServer.dll
 F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.xml
 F:\ForGit\EFDemo\002FluentAPI\bin\Debug\EntityFramework.SqlServer.xml
-F:\ForGit\EFDemo\002FluentAPI\obj\Debug\002FluentAPI.csprojResolveAssemblyReference.cache

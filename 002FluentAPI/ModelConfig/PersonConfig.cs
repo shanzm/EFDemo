@@ -11,7 +11,8 @@ namespace _003CURD.ModelConfig
     {
         public PersonConfig()
         {
-            this.ToTable("T_Persons");//等价于[Table("T_Persons")]
+            this.ToTable("T_Persons");//映射到T_Perosns表中
+                                      //等价于DataAnnotation配置方式中的：[Table("T_Persons")]
         }
     }
 }
