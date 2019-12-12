@@ -36,3 +36,8 @@ T_Classes(PK:Id ,Name)
 * 双向设计：不经最在Student类中添加一个Class类型属性，而且在Class类中添加一个ICollection<Student>类型的对象
 配置方式：在StudentConfig中`this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)`
 同时在ClassConfig中`HasMany(e => e.Students).WithRequired().HasForeignKey(e=>e.ClassId);`
+
+## 006
+* 新建两个表：
+T_Students2
+T_Teachers2

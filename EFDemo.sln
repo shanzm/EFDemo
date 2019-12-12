@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "004FluentAPI2", "004FluentA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "005配置一对多关系", "005配置一对多关系\005配置一对多关系.csproj", "{5951CABF-997D-4F18-9EC2-DD019CEC6253}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "006配置多对多关系", "006配置多对多关系\006配置多对多关系.csproj", "{11DD8A0E-33CE-4500-8F56-0CE226FC4D8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5951CABF-997D-4F18-9EC2-DD019CEC6253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5951CABF-997D-4F18-9EC2-DD019CEC6253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5951CABF-997D-4F18-9EC2-DD019CEC6253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11DD8A0E-33CE-4500-8F56-0CE226FC4D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11DD8A0E-33CE-4500-8F56-0CE226FC4D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11DD8A0E-33CE-4500-8F56-0CE226FC4D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11DD8A0E-33CE-4500-8F56-0CE226FC4D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
