@@ -1,1 +1,10 @@
 F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\006配置多对多关系.exe.config
+F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\006配置多对多关系.exe
+F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\006配置多对多关系.pdb
+F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\EntityFramework.dll
+F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\EntityFramework.SqlServer.dll
+F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\EntityFramework.xml
+F:\ForGit\EFDemo\006配置多对多关系\bin\Debug\EntityFramework.SqlServer.xml
+F:\ForGit\EFDemo\006配置多对多关系\obj\Debug\006配置多对多关系.csprojResolveAssemblyReference.cache
+F:\ForGit\EFDemo\006配置多对多关系\obj\Debug\006配置多对多关系.exe
+F:\ForGit\EFDemo\006配置多对多关系\obj\Debug\006配置多对多关系.pdb

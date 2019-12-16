@@ -38,6 +38,6 @@ T_Classes(PK:Id ,Name)
 同时在ClassConfig中`HasMany(e => e.Students).WithRequired().HasForeignKey(e=>e.ClassId);`
 
 ## 006
-* 新建两个表：
-T_Students2
-T_Teachers2
+* 不建表，使用EF自动生成
+* 在TeacherConfig中添加多对多的配置
+*
