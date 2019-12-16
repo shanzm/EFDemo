@@ -13,7 +13,7 @@ namespace _005配置一对多关系.EntityConfig
         {
             ToTable("T_Classes");
 
-            HasMany(e => e.Students).WithRequired().HasForeignKey(e => e.ClassId);
+            HasMany(c => c.Students).WithRequired(s=>s.Class).HasForeignKey(e => e.ClassId);
         }
     }
 }
