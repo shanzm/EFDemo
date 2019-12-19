@@ -37,7 +37,12 @@ T_Classes(PK:Id ,Name)
 配置方式：在StudentConfig中`this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)`
 同时在ClassConfig中`HasMany(e => e.Students).WithRequired().HasForeignKey(e=>e.ClassId);`
 
-## 006
+## 006配置多对多关系
 * 不建表，使用EF自动生成
 * 在TeacherConfig中添加多对多的配置
-*
+
+```cs
+this.HasMany(t => t.Students).WithMany(s => s.Teachers)
+    .Map(m=>m.ToTable ("T_TeachersStudentRelations")
+    .MapLeftKey ("TeacherId").MapRightKey ("StudentId"));
+```            
