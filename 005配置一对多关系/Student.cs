@@ -18,7 +18,7 @@ namespace _005配置一对多关系
         //看上去好像没有必要定义这个ClassId属性，只要下面的Class属性即可，但是事实是不可以的，这个属性必须有，因为EF生成的SQL语句可能需要
 
         public virtual Class Class { get; set; }
-        //通过Student类中添加这样一个Class类型的属性就将Student和Class类联系起来了
+        //通过Student类中添加这样一个Class类型的属性就将Student和Class类联系起来了，称之为对象之间的关联属性，又称之为导航属性
         //注意这个属性是virtual的，防止报NullReferenceException
 
         //同样我们可以在Class类中添加一个Student集合属性，具体见Class.cs,注意其实是没必要的
