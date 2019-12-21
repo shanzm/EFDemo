@@ -11,6 +11,6 @@ namespace _007公共父类
         public long Id { get; set; }
         public bool IsDeleted { get; set; } = false;
         public DateTime CreateDateTime { get; set; } = DateTime.Now;
-        public DateTime DeleteDateTime { get; set; }
+        public DateTime? DeleteDateTime { get; set; }
     }
 }
