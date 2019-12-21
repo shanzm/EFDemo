@@ -12,7 +12,7 @@ namespace _006配置多对多关系
     {
         public MyDbContext() : base("name=connStr")
         {
-           // Database.SetInitializer<MyDbContext>(null);//关闭EF主库自动迁移
+           // Database.SetInitializer<MyDbContext>(null);//关闭EF主库自动迁移（即关闭EF自动生成表）
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

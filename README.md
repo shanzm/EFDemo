@@ -46,3 +46,6 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
     .Map(m=>m.ToTable ("T_TeachersStudentRelations")
     .MapLeftKey ("TeacherId").MapRightKey ("StudentId"));
 ```            
+
+## 补充：延迟加载
+见：在思维导图笔记中详细说明
