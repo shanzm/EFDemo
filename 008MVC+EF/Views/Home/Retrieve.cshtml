@@ -1,0 +1,25 @@
+﻿@model  _008MVC_EF.Models.HomeRetrieveModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Retrieve</title>
+</head>
+<body>
+    <div> 
+        班级名称：@Model.Class.Name </br>
+        <ul>
+            @foreach (var s in Model.Students)
+            {
+                <li>@s.Name </li>
+            }
+            
+        </ul>
+    </div>
+</body>
+</html>

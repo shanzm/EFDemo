@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "006配置多对多关系", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "007公共父类", "007公共父类\007公共父类.csproj", "{0741543F-D4BB-4551-8404-35D3D61E2219}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "008EFEntities", "008EFEntities\008EFEntities.csproj", "{7711468E-F0F5-4764-9A49-92D56DAE24F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "008MVC+EF", "008MVC+EF\008MVC+EF.csproj", "{94F90839-88A7-40B8-80AD-E0C1F9E8B39A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{0741543F-D4BB-4551-8404-35D3D61E2219}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0741543F-D4BB-4551-8404-35D3D61E2219}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0741543F-D4BB-4551-8404-35D3D61E2219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7711468E-F0F5-4764-9A49-92D56DAE24F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7711468E-F0F5-4764-9A49-92D56DAE24F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7711468E-F0F5-4764-9A49-92D56DAE24F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7711468E-F0F5-4764-9A49-92D56DAE24F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F90839-88A7-40B8-80AD-E0C1F9E8B39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F90839-88A7-40B8-80AD-E0C1F9E8B39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F90839-88A7-40B8-80AD-E0C1F9E8B39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F90839-88A7-40B8-80AD-E0C1F9E8B39A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

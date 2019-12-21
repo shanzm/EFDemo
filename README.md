@@ -49,3 +49,31 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 
 ## 补充：延迟加载
 见：在思维导图笔记中详细说明
+
+
+## 008EFEntities 
+* 新建一类库项目008EFEntities
+* 添加一个Student、Class、Nation类
+* PM>Install-Package EntityFramework
+* 配置好StudentConfig、ClassConfig、NationConfig
+* 新建类-MyDBContext：DBContext
+<hr>
+
+*  新建008MVC+EF项目，一个MVC空模版项目
+*  添加对008EFEntities的引用
+*  PM>Install-Package EntityFramework
+（注意两个项目中都要安装EntityFramework）
+* **在Web.config中配置数据库连接字符串**
+（注意连接字符串是写在启动项目的配置文件中的，
+  这里008EFEntities项目是一个类库项目，启动项目是008MVC+EF）
+<hr>
+
+*  新建一个HomeController控制器，添加一个名为Index（）的Action
+
+* 简单测试EF是否有效，是否可以连接到数据库
+<hr>
+
+* 在HomeController控制器，添加一个名为Retrieve（）的Action
+* 查询Name为“三年级二班”班级和其中的学生，
+* 新建一个名为HomeRetrieveModel的ViewModel，封装数据后传递到View中
+<hr>
