@@ -31,11 +31,21 @@ T_Students(PK:Id，Name，Age，FK:ClassId)
 T_Classes(PK:Id ,Name)
 
 * 单向设计：通过在Student类中添加一个Class类型属性，将两张表联系起
-  配置方式：在StudentConfig中`this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)`
-
+  配置方式：在StudentConfig中:
+```cs
+  this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)`
+```
 * 双向设计：不经最在Student类中添加一个Class类型属性，而且在Class类中添加一个ICollection<Student>类型的对象
-配置方式：在StudentConfig中`this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)`
-同时在ClassConfig中`HasMany(e => e.Students).WithRequired().HasForeignKey(e=>e.ClassId);`
+
+配置方式：在StudentConfig中：
+
+```cs
+this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)
+```
+同时在ClassConfig中:
+```cs
+HasMany(e => e.Students).WithRequired().HasForeignKey(e=>e.ClassId);
+```
 
 ## 006配置多对多关系
 * 不建表，使用EF自动生成
@@ -50,8 +60,12 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 ## 补充：延迟加载
 见：在思维导图笔记中详细说明
 
+##007公共父类
+* 新建一EntityBase.cs作为其他实体类的父类
+* 封装一个泛型类对继承于EntityBase类的子类进行CURD
 
-## 008EFEntities 
+
+## 008EFEntities & 008MVC+EF
 * 新建一类库项目008EFEntities
 * 添加一个Student、Class、Nation类
 * PM>Install-Package EntityFramework
@@ -77,3 +91,18 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 * 查询Name为“三年级二班”班级和其中的学生，
 * 新建一个名为HomeRetrieveModel的ViewModel，封装数据后传递到View中
 <hr>
+
+##MVC+EF+三层
+
+008MVC+EF
+008EFEntities 
+008EFDAL
+008EFBLL
+008EFDTO
+
+* EFEntity(即EF实体类）、DAL（调用EF）、BLL（调用DAL）、UI(即MVC，Controller调用BLL)
+* 以上除UI（MVC）以外都是类库项目
+* 1.在DAL层中调用EF，对数据库中的数据操作，查询返回的数据封装在DTO中
+* 2.在BLL层调用DAL，数据也封装在DTO中
+* 3.在UI层，MVC中的Controller调用BLL，获取数据为DTO
+* 4.将DTO数据封装为ViewModel传输到MVC中的View中（此步骤省略，直接使用了DTO作为ViewModel）
