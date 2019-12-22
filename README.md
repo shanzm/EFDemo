@@ -60,12 +60,12 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 ## 补充：延迟加载
 见：在思维导图笔记中详细说明
 
-##007公共父类
+##00 7公共父类
 * 新建一EntityBase.cs作为其他实体类的父类
 * 封装一个泛型类对继承于EntityBase类的子类进行CURD
 
 
-## 008EFEntities & 008MVC+EF
+## 008 EFEntities & 008MVC+EF
 * 新建一类库项目008EFEntities
 * 添加一个Student、Class、Nation类
 * PM>Install-Package EntityFramework
@@ -92,7 +92,7 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 * 新建一个名为HomeRetrieveModel的ViewModel，封装数据后传递到View中
 <hr>
 
-##MVC+EF+三层
+## MVC+EF+三层
 
 008MVC+EF
 008EFEntities 
