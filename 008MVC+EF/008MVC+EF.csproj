@@ -114,6 +114,7 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Retrieve.cshtml" />
+    <Content Include="Views\Home\Retrieve2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,6 +126,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\008EFBLL\008EFBLL.csproj">
+      <Project>{DD56A3FE-A656-4BBF-B99C-EBA85F115E89}</Project>
+      <Name>008EFBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\008EFDTO\008EFDTO.csproj">
+      <Project>{c9e1b413-01ba-4a1b-9c05-cb6c73f8cc1b}</Project>
+      <Name>008EFDTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\008EFEntities\008EFEntities.csproj">
       <Project>{7711468e-f0f5-4764-9a49-92d56dae24f4}</Project>
       <Name>008EFEntities</Name>
