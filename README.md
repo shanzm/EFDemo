@@ -56,11 +56,19 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
     .Map(m=>m.ToTable ("T_TeachersStudentRelations")
     .MapLeftKey ("TeacherId").MapRightKey ("StudentId"));
 ```            
+---
+##EF配置总结
+
+| 实体关系 | Has          | With          | ForeignKey                     |
+| -------- | ------------ | ------------- | ------------------------------ |
+| 一对一   | .HasRequired | .WithMany     | .HasForeignKey                 |
+| 一对多   | .HasMany     | .WithRequired |                                |
+| 多对多   | .HasMany     | .WithMany     | MapLeftKey,MapRightKey,ToTable |
 
 ## 补充：延迟加载
 见：在思维导图笔记中详细说明
 
-##00 7公共父类
+##007 公共父类
 * 新建一EntityBase.cs作为其他实体类的父类
 * 封装一个泛型类对继承于EntityBase类的子类进行CURD
 
@@ -95,9 +103,13 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 ## MVC+EF+三层
 
 008MVC+EF
+
 008EFEntities 
+
 008EFDAL
+
 008EFBLL
+
 008EFDTO
 
 * EFEntity(即EF实体类）、DAL（调用EF）、BLL（调用DAL）、UI(即MVC，Controller调用BLL)
