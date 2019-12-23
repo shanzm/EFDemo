@@ -35,7 +35,7 @@ T_Classes(PK:Id ,Name)
 ```cs
   this.HasRequired(e=>e.Class).WithMany().HasForeignKey(e=>e.Key)`
 ```
-* 双向设计：不经最在Student类中添加一个Class类型属性，而且在Class类中添加一个ICollection<Student>类型的对象
+* 双向设计：不仅最在Student类中添加一个Class类型属性，而且在Class类中添加一个ICollection<Student>类型的对象
 
 配置方式：在StudentConfig中：
 
@@ -100,18 +100,15 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 * 新建一个名为HomeRetrieveModel的ViewModel，封装数据后传递到View中
 <hr>
 
-## MVC+EF+三层
+## MVC+EF+三层架构
 
-008MVC+EF
+* 008MVC+EF
+* 008EFEntities 
+* 008EFDAL
+* 008EFBLL
+* 008EFDTO
 
-008EFEntities 
-
-008EFDAL
-
-008EFBLL
-
-008EFDTO
-
+### 总结MVC+EF+三层架构
 * EFEntity(即EF实体类）、DAL（调用EF）、BLL（调用DAL）、UI(即MVC，Controller调用BLL)
 * 以上除UI（MVC）以外都是类库项目
 * 1.在DAL层中调用EF，对数据库中的数据操作，查询返回的数据封装在DTO中
@@ -127,3 +124,14 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 * 新建一个名为SchoolWeb的MVC项目，添加EF，配置数据库字符串
 * 新建一个StudentController控制器，在Index（）中调用StudentService.GetByClass()查询学生，查询数据为IEnumber<StudentDTO>类型
 * 将查询的数据就按照IEnumber<StudentDTO>类型传递给View，在View中添加相应的命名空间：@using SchoolDTO，在Index.cshtml中展示数据
+
+### 总结UI+Service架构
+使用三个项目：DTO，Service（包含EF），Web（MVC）
+DTO和Service为类库项目，Web为MVC项目
+操作数据库以及EF实体类都在Service项目中，每一个表单独建一个增删改查的类（和DAL层一样），返回的数据为相应的DTO类型
+DTO为数据传输对象
+
+其实这也是对三层的简化，我们一般的三层架构中BLL层只是简单的对数据的传递，所以简化BLL
+同时把EF实体类和DAL放到一个项目中，即Service项目中
+
+
