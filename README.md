@@ -126,12 +126,12 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 * 将查询的数据就按照IEnumber<StudentDTO>类型传递给View，在View中添加相应的命名空间：@using SchoolDTO，在Index.cshtml中展示数据
 
 ### 总结UI+Service架构
-使用三个项目：DTO，Service（包含EF），Web（MVC）
-DTO和Service为类库项目，Web为MVC项目
-操作数据库以及EF实体类都在Service项目中，每一个表单独建一个增删改查的类（和DAL层一样），返回的数据为相应的DTO类型
-DTO为数据传输对象
+* 使用三个项目：DTO，Service（包含EF），Web（MVC）
+* DTO和Service为类库项目，Web为MVC项目
+* 操作数据库以及EF实体类都在Service项目中，每一个表单独建一个增删改查的类（和DAL层一样），返回的数据为相应的DTO类型
+* DTO为数据传输对象
 
-其实这也是对三层的简化，我们一般的三层架构中BLL层只是简单的对数据的传递，所以简化BLL
+* 其实这也是对三层的简化，我们一般的三层架构中BLL层只是简单的对数据的传递，所以简化BLL
 同时把EF实体类和DAL放到一个项目中，即Service项目中
 
 
