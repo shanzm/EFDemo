@@ -10,6 +10,7 @@ namespace SchoolService
 {
     public class StudentService
     {
+        //添加
         public void Add(string name, int age, long nationId, long classId)
         {
             using (MyDbContext cxt = new MyDbContext())
@@ -20,6 +21,7 @@ namespace SchoolService
             }
         }
 
+        //删除
         public void Delete(long id)
         {
             using (MyDbContext cxt = new MyDbContext())
@@ -30,6 +32,7 @@ namespace SchoolService
             }
         }
 
+        //根据Id查询
         public StudentDTO GetById(long id)
         {
             using (MyDbContext cxt = new MyDbContext())
@@ -39,10 +42,11 @@ namespace SchoolService
                 {
                     return null;
                 }
-                return new StudentDTO() { Name = stu.Name, Age = stu.Age, ClassName = stu.Class.Name, NationName = stu.Nation.Name };
+                return new StudentDTO() { Id=id,Name = stu.Name, Age = stu.Age, ClassName = stu.Class.Name, NationName = stu.Nation.Name };
             }
         }
 
+        //根据班级Id查询其中所有学生
         public IEnumerable<StudentDTO> GetByClass(long classId)
         {
             using (MyDbContext cxt = new MyDbContext())
@@ -61,7 +65,7 @@ namespace SchoolService
                 //yield指令可以告诉编译器函数返回的IEnumber<StudentDTO>由yield return 返回的元素填充
                 foreach (Student stu in students)
                 {
-                    yield return new StudentDTO() { Name = stu.Name, Age = stu.Age, ClassName = stu.Class.Name, NationName = stu.Nation.Name };
+                    yield return new StudentDTO() { Id=stu.Id,Name = stu.Name, Age = stu.Age, ClassName = stu.Class.Name, NationName = stu.Nation.Name };
                 }
 
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolDTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,13 @@ namespace SchoolService
     public class NationService
     {
         //获取所有的民族
-        public IEnumerable<Nation> GetAll()
+        public IEnumerable<NationDTO> GetAll()
         {
             using (MyDbContext cxt = new MyDbContext())
             {
                 foreach (Nation n in cxt.Nations)
                 {
-                    yield return (new Nation() { Id = n.Id, Name = n.Name });
+                    yield return (new NationDTO() { Id = n.Id, Name = n.Name });
                 }
             }
         }
