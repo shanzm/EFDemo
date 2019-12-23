@@ -57,7 +57,7 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
     .MapLeftKey ("TeacherId").MapRightKey ("StudentId"));
 ```            
 ---
-##EF配置总结
+## EF配置总结
 
 | 实体关系 | Has          | With          | ForeignKey                     |
 | -------- | ------------ | ------------- | ------------------------------ |
@@ -68,7 +68,7 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 ## 补充：延迟加载
 见：在思维导图笔记中详细说明
 
-##007 公共父类
+## 007公共父类
 * 新建一EntityBase.cs作为其他实体类的父类
 * 封装一个泛型类对继承于EntityBase类的子类进行CURD
 

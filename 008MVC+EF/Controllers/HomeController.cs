@@ -8,6 +8,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
+//MVC 整体作为三层架构的UI层
+//UI 项目虽然不直接访问 EF 中的类，但是仍然需要在 UI 项目的 App.config（Web.config）中对 EF 做配置，
+//也要在项目中通过 Nuget 安装 EF，然后并且要把连接字符串也配置到 UI项目的 App.config（Web.config）中
+
+
 namespace _008MVC_EF.Controllers
 {
     public class HomeController : Controller
@@ -84,7 +90,7 @@ namespace _008MVC_EF.Controllers
             StudentBLL stuBLL = new StudentBLL();
             StudentDTO stuDTO = stuBLL.GetById(1);//查询Id=1的学生
             //我们可以在MVC的项目中，添加一个相关的ViewModel，把stuDTO中的数据赋予相关的ViewModel中
-            //此处。我们直接使用DTO做ViewModel
+            //此处。我们直接使用DTO做ViewModel，因为这个DTO对象满足当前我们需要传输数据的要求
             return View(stuDTO);
         }
     }
