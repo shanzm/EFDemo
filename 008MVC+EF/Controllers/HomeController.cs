@@ -10,8 +10,8 @@ using System.Web.Mvc;
 
 
 //MVC 整体作为三层架构的UI层
-//UI 项目虽然不直接访问 EF 中的类，但是仍然需要在 UI 项目的 App.config（Web.config）中对 EF 做配置，
-//也要在项目中通过 Nuget 安装 EF，然后并且要把连接字符串也配置到 UI项目的 App.config（Web.config）中
+//UI 项目虽然不直接访问 EF 中的类，但是仍然需要安装EF，并自动在App.config（Web.config）中对 EF 做配置，
+//数据库的连接字符串也配置到 UI项目的 App.config（Web.config）中
 
 
 namespace _008MVC_EF.Controllers
