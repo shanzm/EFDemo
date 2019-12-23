@@ -1,0 +1,27 @@
+﻿@using SchoolDTO
+@model IEnumerable<StudentDTO>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>学生表</title>
+</head>
+<body>
+    <table>
+        <thead><tr><th>姓名</th><th>年龄</th><th>班级</th><th>民族</th></tr></thead>
+        <tbody>
+            @foreach (StudentDTO stu in Model)
+            {
+                <tr><td>@stu.Name</td><td>@stu.Age</td><td>@stu.ClassName</td><td>@stu.NationName</td></tr>
+            }
+        </tbody>
+    </table>
+    <div>
+    </div>
+</body>
+</html>

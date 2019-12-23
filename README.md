@@ -118,3 +118,12 @@ this.HasMany(t => t.Students).WithMany(s => s.Teachers)
 * 2.在BLL层调用DAL，数据也封装在DTO中
 * 3.在UI层，MVC中的Controller调用BLL，获取数据为DTO
 * 4.将DTO数据封装为ViewModel传输到MVC中的View中（此步骤省略，直接使用了DTO作为ViewModel）
+
+## 009 UI+Service
+* 假设一个关一下学校的项目
+* 新建一个名为SchoolService类库项目->添加EF，并新建实体类，并配置
+* 新建一个名为SchoolDTO类库项目->添加StudentDTO，ClassDTO，NationDTO
+* 在SchoolService中添加一个StudentService类实现对数据库中的学生数据的操作，返回StudentDTO类型数据
+* 新建一个名为SchoolWeb的MVC项目，添加EF，配置数据库字符串
+* 新建一个StudentController控制器，在Index（）中调用StudentService.GetByClass()查询学生，查询数据为IEnumber<StudentDTO>类型
+* 将查询的数据就按照IEnumber<StudentDTO>类型传递给View，在View中添加相应的命名空间：@using SchoolDTO，在Index.cshtml中展示数据
