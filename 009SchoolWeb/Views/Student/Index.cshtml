@@ -1,4 +1,4 @@
-﻿@using SchoolDTO
+﻿@using SchoolDTO@*我们可以把这个常用的命名空间添加在View/web.config*@
 @model IEnumerable<StudentDTO>
 @{
     Layout = null;
@@ -12,12 +12,20 @@
     <title>学生表</title>
 </head>
 <body>
+    <a href="~/Student/AddNew ">添加新学生</a>
     <table>
-        <thead><tr><th>姓名</th><th>年龄</th><th>班级</th><th>民族</th></tr></thead>
+        <thead><tr><th>姓名</th><th>年龄</th><th>班级</th><th>民族</th><th>删除</th></tr></thead>
         <tbody>
             @foreach (StudentDTO stu in Model)
             {
-                <tr><td>@stu.Name</td><td>@stu.Age</td><td>@stu.ClassName</td><td>@stu.NationName</td></tr>
+                <tr>
+                    <td>@stu.Name</td>
+                    <td>@stu.Age</td>
+                    <td>@stu.ClassName </td>
+                    <td>@stu.NationName</td>
+               <td><a href="~/Student/Delete?id=@stu.Id" onclick="return confirm('是否要删除@(stu.Name)')">删除</a></td>
+                
+            </tr>
             }
         </tbody>
     </table>

@@ -1,0 +1,25 @@
+﻿@model SelectList
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增学生</title>
+</head>
+<body>
+    <form action="~/student/AddNew" method="post">
+        姓名：  <input type="text" name="Name" />
+        年龄：<input type="text" name="Age" />
+        民族：@Html.DropDownList("NationId",Model)@*第一个参数是下拉列表要返回的字段，即选中汉族，而汉族的Id是1，就返回1*@
+        <input type="submit" value="提交" />
+
+    </form>
+    <div>
+
+    </div>
+</body>
+</html>
