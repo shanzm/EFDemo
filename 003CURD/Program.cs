@@ -69,7 +69,7 @@ namespace _003CURD
                 //Delete2();
 
                 // EF对象状态管理--例6--EF优化的一个技巧-使用AsNoTracking()
-                Optimize();
+               // Optimize();
                 Console.ReadKey();
             }
         }
