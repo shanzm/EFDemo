@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// 关于具体的FluentAPI配置属性可以参考:https://www.cnblogs.com/giftmm/p/9308853.html
+/// </summary>
+
 namespace _004FluentAPI2
 {
     class PersonConfig : EntityTypeConfiguration<Person>
